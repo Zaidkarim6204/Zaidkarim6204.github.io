@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Zaid Karim | Data Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Syed Zaid Karim</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-text">
+            <h1>SYED ZAID KARIM.</h1>
+            <p>Aspiring data analyst |B.tech computer science student.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Zaidkarim6204" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Detail-oriented aspiring Data Analyst with strong skills in SQL, Power BI, Python, and data visualization. Experienced in building interactive dashboards and transforming raw data into actionable business insights.</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/netflix.jpg" alt="Netflix Insight Dashboard">
+                <h3>Netflix Insight Dashboard</h3>
+                <p>Designed an interactive dashboard to analyze Netflix content by genre, country, and duration. Cleaned and transformed raw data using Power Query and applied DAX to calculate key metrics, visualizing top-performing genres and global content trends.</p>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD1o_D4B6f1-zk_ubaz-twou-DK4UVFZzqY&utm_campaign=copy_link" class="btn" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="images/ds_salaries.jpg" alt="Data Science Salaries Dashboard">
+                <h3>DS_SALARIES_DASHBOARD</h3>
+                <p>Visualizes global Data Science salary data from 2020 to 2023. Includes interactive charts for salary trends by job title, experience level, company size, and remote work ratio, designed to support data-driven decisions for professionals.</p>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_datascience-salaries-remotework-activity-7360030787842289665-rlb9?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD1o_D4B6f1-zk_ubaz-twou-DK4UVFZzqY&utm_campaign=copy_link" class="btn" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="images/sales.jpg" alt="Sales & Operations KPI Dashboard">
+                <h3>Sales & Operations KPI Dashboard</h3>
+                <p>Developed a dashboard to evaluate company sales performance by region, product category, and time period. Built KPIs like Total Sales, Profit, and Quantity Sold using custom DAX measures, and highlighted top/bottom performers with ranking logic.</p>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-datavisualization-businessintelligence-activity-7344028856283996163-2Zls?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD1o_D4B6f1-zk_ubaz-twou-DK4UVFZzqY&utm_campaign=copy_link" class="btn" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p>I'm currently seeking entry-level opportunities and internships in Data Analytics. Feel free to reach out!</p>
+        <a href="mailto:karimzaid370@gmail.com" class="btn">Email Me</a>
+        <a href="SYED_ZAID_KARIM_RESUME.pdf" class="btn" target="_blank">Download Resume</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Syed Zaid Karim. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
