@@ -3,118 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Zaid Karim | Data Analyst</title>
+    <title>Syed Zaid Karim | Data Analyst Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <header>
         <nav>
-            <div class="logo">Syed Zaid Karim</div>
+            <a href="#" class="logo">Syed Zaid Karim</a>
             <ul>
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <div class="hero-text">
-            <h1>SYED ZAID KARIM.</h1>
-            <p>Aspiring data analyst |B.tech computer science student.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Zaidkarim6204" target="_blank">GitHub</a>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="text-content">
+                <h1>Syed Zaid Karim</h1>
+                <p>Aspiring Data Analyst & B.Tech Computer Science Student</p>
+                <div class="hero-buttons">
+                    <a href="SYED_ZAID_KARIM_RESUME.pdf" class="button" download>Download Resume</a>
+                    <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" class="social-button"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/Zaidkarim6204" target="_blank" class="social-button"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="images/profile-picture.jpg" alt="Syed Zaid Karim">
             </div>
         </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="content-section">
         <h2>About Me</h2>
         <p>Detail-oriented aspiring Data Analyst with strong skills in SQL, Power BI, Python, and data visualization. Experienced in building interactive dashboards and transforming raw data into actionable business insights.</p>
     </section>
 
-    <section id="projects">
+    <section id="skills" class="content-section">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Streamlit</div>
+            <div class="skill-card">Pandas</div>
+            <div class="skill-card">SQL</div>
+            <div class="skill-card">Power BI</div>
+            <div class="skill-card">DAX</div>
+            <div class="skill-card">Plotly</div>
+            <div class="skill-card">Requests API</div>
+        </div>
+    </section>
+
+    <section id="projects" class="content-section">
         <h2>My Projects</h2>
-        <div class="projects-grid">
+        <div class="project-grid">
+
+            <div class="project-card">
+                <img src="images/crypto-screenshot.jpg" alt="Crypto Dashboard">
+                <h3>Live Crypto Dashboard</h3>
+                <p>A real-time dashboard displaying live market data for the top 10 cryptocurrencies from the CoinGecko API.</p>
+                <div class="project-links">
+                    <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" class="button-demo" target="_blank">Demo</a>
+                    <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" class="button-code" target="_blank">Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="images/news-screenshot.jpg" alt="News Dashboard">
+                <h3>Live Global News Tracker</h3>
+                <p>A dynamic web app that visualizes live news headlines from the GNews API on an interactive world map.</p>
+                <div class="project-links">
+                    <a href="https://news-dashboard-gbfxoy46ttutjpevyrws7k.streamlit.app/" class="button-demo" target="_blank">Demo</a>
+                    <a href="https://github.com/Zaidkarim6204/news-dashboard" class="button-code" target="_blank">Code</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="images/weather-screenshot.jpg" alt="Weather App">
+                <h3>Live Weather App</h3>
+                <p>An intuitive app that provides current weather conditions for any city using the OpenWeatherMap API.</p>
+                <div class="project-links">
+                    <a href="https://liveweather-b6xdypvrjpxv5yzk2w7deo.streamlit.app/" class="button-demo" target="_blank">Demo</a>
+                    <a href="https://github.com/Zaidkarim6204/LIVEWeather" class="button-code" target="_blank">Code</a>
+                </div>
+            </div>
+
             <div class="project-card">
                 <img src="images/netflix.jpg" alt="Netflix Insight Dashboard">
                 <h3>Netflix Insight Dashboard</h3>
-                <p>Designed an interactive dashboard to analyze Netflix content by genre, country, and duration. Cleaned and transformed raw data using Power Query and applied DAX to calculate key metrics, visualizing top-performing genres and global content trends.</p>
+                <p>An interactive Power BI dashboard to analyze Netflix content by genre, country, and duration, using DAX for key metrics.</p>
                 <div class="project-links">
-                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD1o_D4B6f1-zk_ubaz-twou-DK4UVFZzqY&utm_campaign=copy_link" class="btn" target="_blank">Live Demo</a>
+                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R" class="button-demo" target="_blank">Demo</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <img src="images/ds_salaries.jpg" alt="Data Science Salaries Dashboard">
-                <h3>DS_SALARIES_DASHBOARD</h3>
-                <p>Visualizes global Data Science salary data from 2020 to 2023. Includes interactive charts for salary trends by job title, experience level, company size, and remote work ratio, designed to support data-driven decisions for professionals.</p>
+                <h3>Data Science Salaries Dashboard</h3>
+                <p>Visualizes global Data Science salary data from 2020-2023 with interactive charts for salary trends by job title and experience.</p>
                 <div class="project-links">
-                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_datascience-salaries-remotework-activity-7360030787842289665-rlb9?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD1o_D4B6f1-zk_ubaz-twou-DK4UVFZzqY&utm_campaign=copy_link" class="btn" target="_blank">Live Demo</a>
+                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_datascience-salaries-remotework-activity-7360030787842289665-rlb9" class="button-demo" target="_blank">Demo</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <img src="images/sales.jpg" alt="Sales & Operations KPI Dashboard">
                 <h3>Sales & Operations KPI Dashboard</h3>
-                <p>Developed a dashboard to evaluate company sales performance by region, product category, and time period. Built KPIs like Total Sales, Profit, and Quantity Sold using custom DAX measures, and highlighted top/bottom performers with ranking logic.</p>
+                <p>A Power BI dashboard to evaluate company sales performance by region and product, using custom DAX measures for KPIs.</p>
                 <div class="project-links">
-                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-datavisualization-businessintelligence-activity-7344028856283996163-2Zls?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAD1o_D4B6f1-zk_ubaz-twou-DK4UVFZzqY&utm_campaign=copy_link" class="btn" target="_blank">Live Demo</a>
+                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-datavisualization-businessintelligence-activity-7344028856283996163-2Zls" class="button-demo" target="_blank">Demo</a>
                 </div>
             </div>
-            <div class="project-card">
-    
-    <img src="URL_TO_YOUR_SCREENSHOT" alt="Project Screenshot">
-    
-    <h3>Live Crypto Dashboard</h3>
-    
-    <p>A real-time cryptocurrency dashboard displaying live market data for the top 10 coins by market capitalization from the CoinGecko API.</p>
-    
-    <p><strong>Technologies:</strong> Python, Streamlit, Pandas, Requests API</p>
-    
-    <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" class="button">View Live Demo</a>
-    <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" class="button">View Source Code</a>
-    
-</div>
-            <div class="project-card">
-    
-    <img src="URL_TO_YOUR_WEATHER_APP_SCREENSHOT" alt="Weather App Screenshot">
-    
-    <h3>Live Weather App</h3>
-    
-    <p>An intuitive web application that provides current weather conditions for any city in the world using the OpenWeatherMap API. The app displays key meteorological data in a well-organized layout.</p>
-    
-    <p><strong>Technologies:</strong> Python, Streamlit, Requests API</p>
-    
-    <a href="https://liveweather-b6xdypvrjpxv5yzk2w7deo.streamlit.app/" class="button">View Live Demo</a>
-    <a href="https://github.com/Zaidkarim6204/LIVEWeather" class="button">View Source Code</a>
-    
-</div>
-            <div class="project-card">
-    
-    <img src="URL_TO_YOUR_NEWS_APP_SCREENSHOT" alt="News Dashboard Screenshot">
-    
-    <h3>Live Global News & Events Tracker</h3>
-    
-    <p>A dynamic web application that fetches and visualizes live news headlines from around the world using the GNews API. The dashboard allows users to track topics in real-time, displaying news hotspots on an interactive world map.</p>
-    
-    <p><strong>Technologies:</strong> Python, Streamlit, Pandas, Plotly, Requests API</p>
-    
-    <a href="https://news-dashboard-gbfxoy46ttutjpevyrws7k.streamlit.app/" class="button">View Live Demo</a>
-    <a href="https://github.com/Zaidkarim6204/news-dashboard" class="button">View Source Code</a>
-    
-</div>
+
         </div>
-        
     </section>
 
-    <section id="contact">
+    <section id="contact" class="content-section">
         <h2>Get In Touch</h2>
         <p>I'm currently seeking entry-level opportunities and internships in Data Analytics. Feel free to reach out!</p>
-        <a href="mailto:karimzaid370@gmail.com" class="btn">Email Me</a>
-        <a href="SYED_ZAID_KARIM_RESUME.pdf" class="btn" target="_blank">Download Resume</a>
+        <a href="mailto:karimzaid370@gmail.com" class="button">Email Me</a>
     </section>
 
     <footer>
@@ -123,4 +134,3 @@
 
 </body>
 </html>
-
