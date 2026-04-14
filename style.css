@@ -1,127 +1,90 @@
 :root {
-    --bg-black: #0a0b10; /* Darker, slightly blue-tinted black for depth */
-    --card-bg: #15171e;
-    --sub-box-bg: #1f222d;
-    --netflix-red: #E50914;
-    --accent-green: #00ff88;
-    --text-white: #ffffff;
-    --text-dim: #b3b3b3;
+    --bg-netflix: #141414;
+    --red-netflix: #E50914;
+    --text-main: #FFFFFF;
+    --text-sub: #808080;
+    --card-width: 300px;
 }
 
-body {
-    background-color: var(--bg-black);
-    color: var(--text-white);
-    font-family: 'DM Sans', sans-serif;
-    margin: 0;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body.netflix-body {
+    background-color: var(--bg-netflix);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Skills Wrapper - Grid Layout */
-.skills-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 20px 0;
+/* NAVIGATION */
+.browse-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 4%; position: fixed; width: 100%; z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+    transition: background 0.3s;
 }
 
-/* The Parent Box */
-.parent-box {
-    background: var(--card-bg);
-    border: 1px solid #252833;
-    border-radius: 12px;
-    padding: 24px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+.logo { font-family: 'Syne', sans-serif; font-size: 2rem; color: var(--red-netflix); font-weight: 900; }
+.logo span { color: white; }
+
+.nav-left { display: flex; align-items: center; gap: 40px; }
+.nav-menu { display: flex; list-style: none; gap: 20px; }
+.nav-menu a { text-decoration: none; color: #e5e5e5; font-size: 0.85rem; transition: 0.3s; }
+.nav-menu a:hover, .nav-menu a.active { color: white; font-weight: bold; }
+
+.nav-right { display: flex; gap: 20px; align-items: center; font-size: 1.2rem; }
+.profile-icon { width: 32px; height: 32px; background: #e50914; border-radius: 4px; }
+
+/* BILLBOARD (Featured Section) */
+.billboard {
+    height: 85vh; background: linear-gradient(to right, #141414 15%, transparent 80%), url('images/hero-bg.jpg');
+    background-size: cover; background-position: center; display: flex; align-items: center; padding-left: 4%;
 }
 
-.parent-box:hover {
-    border-color: var(--accent-green);
-    transform: translateY(-5px);
+.billboard-content { max-width: 600px; }
+.main-title { font-family: 'Syne', sans-serif; font-size: 4.5rem; line-height: 1; margin-bottom: 20px; }
+.description { font-size: 1.2rem; color: #fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); margin-bottom: 25px; }
+
+.btn { padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; transition: 0.3s; }
+.btn.play { background: white; color: black; }
+.btn.play:hover { background: rgba(255,255,255,0.7); }
+.btn.info { background: rgba(109, 109, 110, 0.7); color: white; }
+
+/* PROJECT ROWS */
+.rows-container { margin-top: -150px; position: relative; z-index: 10; padding-bottom: 100px; }
+
+.row { margin-bottom: 40px; padding: 0 4%; }
+.row-header { font-size: 1.4rem; font-weight: bold; margin-bottom: 15px; transition: color 0.3s; }
+
+.row-inner {
+    display: flex; gap: 10px; overflow-x: auto; padding: 20px 0;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+.row-inner::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome */
+
+/* NETFLIX CARD HOVER */
+.netflix-card {
+    flex: 0 0 var(--card-width); height: 170px; background: #181818; border-radius: 4px;
+    position: relative; transition: transform 0.3s ease, z-index 0.3s; cursor: pointer;
 }
 
-.box-header {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.netflix-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+
+.netflix-card:hover {
+    transform: scale(1.4); z-index: 100; box-shadow: 0px 10px 20px rgba(0,0,0,0.6);
 }
 
-.box-header i {
-    color: var(--accent-green);
+.card-overlay {
+    position: absolute; bottom: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 15px; opacity: 0; transition: opacity 0.3s;
 }
 
-/* Sub-Skills Container */
-.sub-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+.netflix-card:hover .card-overlay { opacity: 1; }
+.card-overlay h4 { font-size: 0.9rem; margin-bottom: 5px; }
+.card-overlay p { font-size: 0.7rem; color: #46d369; font-weight: bold; }
 
-/* The Sub-Box (Numpy, Pandas, etc.) */
-.sub-box {
-    background: var(--sub-box-bg);
-    color: var(--text-dim);
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-family: 'JetBrains Mono', monospace;
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.sub-box:hover {
-    color: var(--text-white);
-    border-color: var(--accent-green);
-    background: #252a3a;
-}
-
-/* Highlight specific skill like in your image */
-.sub-box.highlight {
-    border: 1px solid var(--accent-green);
-    color: var(--accent-green);
-}
-
-/* Netflix Style Project Cards */
-.project-card {
-    background: var(--card-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: 0.4s;
-}
-
-.project-card:hover {
-    transform: scale(1.05);
-}
-
-.btn-netflix {
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.8rem;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.btn-netflix.red { background: var(--netflix-red); color: white; }
-.btn-netflix.grey { background: rgba(109, 109, 110, 0.7); color: white; margin-left: 10px; }
-
-/* Grid Background */
-.bg-grid {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px), 
-                      linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    z-index: -1;
-}
-
-/* Global Styles */
-.content-section { padding: 60px 8%; }
-.section-title { font-family: 'Syne', sans-serif; font-size: 2.5rem; margin-bottom: 40px; }
-.navbar { display: flex; justify-content: space-between; padding: 20px 8%; position: sticky; top: 0; background: rgba(10,11,16,0.95); z-index: 100; }
-.logo span { color: var(--netflix-red); }
-.nav-links { list-style: none; display: flex; gap: 30px; align-items: center; }
-.nav-links a { color: var(--text-dim); text-decoration: none; transition: 0.3s; }
-.nav-links a:hover { color: white; }
-.hire-btn { background: var(--netflix-red); color: white !important; padding: 8px 20px; border-radius: 4px; font-weight: bold; }
+/* FOOTER */
+.browse-footer { text-align: center; padding: 50px 0; border-top: 2px solid #333; }
+.footer-socials { display: flex; justify-content: center; gap: 30px; font-size: 1.5rem; margin-bottom: 20px; }
+.footer-socials a { color: var(--text-sub); transition: 0.3s; }
+.footer-socials a:hover { color: white; }
+.copyright { color: var(--text-sub); font-size: 0.8rem; }
