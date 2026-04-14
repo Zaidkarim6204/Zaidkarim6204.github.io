@@ -3,124 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Zaid Karim | Data Analyst & AI Developer</title>
+    <title>Syed Zaid Karim | Data Analyst</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Syne:wght@800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="netflix-body">
 
-    <section class="hero">
-        <h1>Syed Zaid Karim</h1>
-        <h2>Data Analyst & AI Developer</h2>
-        <p>Computer Science Engineering | AJU ’26</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Zaidkarim6204" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/zaid.tech31" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <div id="loader" class="profile-gate">
+        <h1>Who's Watching?</h1>
+        <div class="profile-container">
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar blue"></div>
+                <span>Recruiter</span>
+            </div>
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar grey"></div>
+                <span>Developer</span>
+            </div>
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar red"></div>
+                <span>Stalker</span>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section id="about" class="content-section">
-        <h2>About Me</h2>
-        <p>A results-driven Computer Science Engineering student specializing in Data Analytics and Generative AI. I bridge the gap between complex data and actionable business insights using Python, Power BI, and SQL. Currently focused on architecting AI-powered solutions and interactive data visualizations.</p>
-    </section>
+    <div id="main-content" class="hidden">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">ZAID <span>KARIM</span></div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <i class="fas fa-search"></i>
+                <div class="profile-icon"></div>
+            </div>
+        </nav>
 
-    <section id="skills" class="content-section">
-        <h2>Technical Stack</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fab fa-python"></i><span>Python</span></div>
-            <div class="skill-card"><i class="fas fa-database"></i><span>SQL</span></div>
-            <div class="skill-card"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
-            <div class="skill-card"><i class="fas fa-robot"></i><span>GenAI</span></div>
-            <div class="skill-card"><i class="fas fa-wind"></i><span>Streamlit</span></div>
-            <div class="skill-card"><i class="fas fa-table"></i><span>Pandas</span></div>
-            <div class="skill-card"><i class="fas fa-atom"></i><span>NumPy</span></div>
-            <div class="skill-card"><i class="fas fa-chart-line"></i><span>Matplotlib</span></div>
-            <div class="skill-card"><i class="fas fa-palette"></i><span>Seaborn</span></div>
-            <div class="skill-card"><i class="fas fa-chart-pie"></i><span>Plotly</span></div>
-            <div class="skill-card"><i class="fas fa-brain"></i><span>Scikit-learn</span></div>
-            <div class="skill-card"><i class="fas fa-file-excel"></i><span>Excel</span></div>
-        </div>
-    </section>
-
-    <section id="projects" class="content-section">
-        <h2>Featured Projects</h2>
-        <div class="project-grid">
-
-            <div class="project-card">
-                <img src="images/resume-architect.jpg" alt="AI Resume Architect Dashboard">
-                <div class="project-tag">Featured</div>
-                <h3>AI Resume Architect</h3>
-                <p>A GenAI-powered document system built with the Google Gemini API and Streamlit to analyze and architect professional resumes.</p>
-                <div class="project-links">
-                    <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank">Demo</a>
-                    <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank">Code</a>
+        <header class="hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1 class="reveal">Syed Zaid Karim</h1>
+                    <h3 style="color: #46d369; margin-bottom: 10px;">98% Match for Data Analyst Roles</h3>
+                    <p>Computer Science Engineering student specializing in Data Analytics and Generative AI. Architecting insights with Python, Power BI, and SQL.</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn btn-white"><i class="fas fa-play"></i> Resume</a>
+                        <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" class="btn btn-grey"><i class="fas fa-info-circle"></i> LinkedIn</a>
+                    </div>
                 </div>
             </div>
+        </header>
 
-            <div class="project-card">
-                <img src="images/ai-assistant.jpg" alt="AI Assistant Chatbot">
-                <h3>Multi-Tool AI Assistant</h3>
-                <p>Advanced conversational AI powered by Google Gemini with web search, weather integration, and automated email capabilities.</p>
-                <div class="project-links">
-                    <a href="https://zaidai-2xxp8rawimrutykwvyny66.streamlit.app/" class="button-demo" target="_blank">Demo</a>
-                    <a href="https://github.com/Zaidkarim6204/zaid_ai" class="button-code" target="_blank">Code</a>
+        <main class="content-rows">
+            <section class="row" id="projects">
+                <h2 class="row-title">Today's Top Picks for Recruiter</h2>
+                <div class="row-inner">
+                    <div class="netflix-card">
+                        <img src="images/resume-architect.jpg" alt="">
+                        <div class="card-overlay">
+                            <h4>AI Resume Architect</h4>
+                            <p>GenAI • Streamlit</p>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+            <section id="skills" class="row">
+                <h2 class="row-title">Continue Watching: Technical Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header"><i class="fas fa-chart-pie"></i> BI & Visualization</div>
+                        <div class="tags-container">
+                            <span class="tag">Power BI</span><span class="tag">Tableau</span>
+                            <span class="tag">KPI Design</span><span class="tag">Storytelling</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header"><i class="fas fa-code"></i> Programming & AI</div>
+                        <div class="tags-container">
+                            <span class="tag highlight">Python</span><span class="tag highlight">Gen AI</span>
+                            <span class="tag">Streamlit</span><span class="tag">Pandas</span>
+                        </div>
+                    </div>
                 </div>
+            </section>
+        </main>
+
+        <section id="contact" class="contact-area">
+            <div class="contact-card">
+                <div class="profile-header">
+                    <div class="p-avatar"></div>
+                    <div class="p-info">
+                        <h3>Syed Zaid Karim</h3>
+                        <p>CS Student | AJU '26</p>
+                    </div>
+                </div>
+                <p class="p-bio">Scheduled to graduate in Feb 2026. Specialized in Data Science & AI. Based in Jamshedpur.</p>
+                <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" class="linkedin-btn">View LinkedIn Profile</a>
             </div>
 
-            <div class="project-card">
-                <img src="images/netflix.jpg" alt="Netflix Insight Dashboard">
-                <h3>Netflix Insight Dashboard</h3>
-                <p>Interactive Power BI dashboard analyzing global content trends using advanced DAX for custom performance metrics.</p>
-                <div class="project-links">
-                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R" target="_blank">Demo</a>
-                </div>
+            <div class="contact-links-grid">
+                <div class="contact-pill red"><i class="fas fa-envelope"></i> karimzaid370@gmail.com</div>
+                <div class="contact-pill dark"><i class="fas fa-phone"></i> +91 6204027036</div>
+                <a href="https://www.instagram.com/zaid.tech31" class="contact-pill insta"><i class="fab fa-instagram"></i> @zaid.tech31</a>
+                <a href="https://github.com/Zaidkarim6204" class="contact-pill github"><i class="fab fa-github"></i> GitHub</a>
             </div>
+        </section>
 
-            <div class="project-card">
-                <img src="images/crypto.jpg" alt="Crypto Dashboard">
-                <h3>Live Crypto Dashboard</h3>
-                <p>Real-time financial dashboard displaying live market data and price movements via the CoinGecko API.</p>
-                <div class="project-links">
-                    <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" target="_blank">Demo</a>
-                    <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" target="_blank">Code</a>
-                </div>
-            </div>
+        <footer>
+            <p>&copy; 2026 Syed Zaid Karim. All Rights Reserved.</p>
+        </footer>
+    </div>
 
-            <div class="project-card">
-                <img src="images/news.jpg" alt="News Dashboard">
-                <h3>Live Global News Tracker</h3>
-                <p>Dynamic web application visualizing global headlines and categorizing news using the GNews API.</p>
-                <div class="project-links">
-                    <a href="https://news-dashboard-gbfxoy46ttutjpevyrws7k.streamlit.app/" target="_blank">Demo</a>
-                    <a href="https://github.com/Zaidkarim6204/news-dashboard" target="_blank">Code</a>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <img src="images/data_science.jpg" alt="Data Science Salaries Dashboard">
-                <h3>Data Science Salary Analysis</h3>
-                <p>Comprehensive Power BI analysis of global salary trends, comparing remote, hybrid, and on-site role compensations.</p>
-                <div class="project-links">
-                    <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_datascience-salaries-remotework-activity-7360030787842289665-rlb9" target="_blank">Demo</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="content-section">
-        <h2>Get In Touch</h2>
-        <div class="contact-links">
-            <a href="mailto:karimzaid370@gmail.com" title="Email Me"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Syed Zaid Karim. All Rights Reserved.</p>
-    </footer>
-
+    <script>
+        function enterSite() {
+            document.getElementById('loader').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('main-content').classList.remove('hidden');
+                document.getElementById('main-content').classList.add('fade-in');
+            }, 500);
+        }
+    </script>
 </body>
 </html>
