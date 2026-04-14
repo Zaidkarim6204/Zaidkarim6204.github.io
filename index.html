@@ -3,202 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Zaid Karim | Data Analyst & AI Developer</title>
+    <title>Syed Zaid Karim | Data Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=JetBrains+Mono&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body class="dark-theme">
 
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-
     <div class="bg-grid"></div>
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
 
     <nav class="navbar">
         <div class="logo">SZK<span>.</span></div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#projects">Work</a></li>
             <li><a href="mailto:karimzaid370@gmail.com" class="hire-btn">Hire Me</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1 class="reveal">Syed Zaid <span>Karim</span></h1>
-            <h2 class="reveal-delay">Data Analyst & AI Developer</h2>
-            <p class="reveal-delay-2">Computer Science Engineering | AJU ’26</p>
-            <div class="hero-btns reveal-delay-2">
-                <a href="tel:+91YOUR_PHONE_NUMBER" class="btn primary"><i class="fas fa-phone-alt"></i> Call Me</a>
-                <a href="#projects" class="btn secondary">View Work</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="about" class="content-section">
-        <h2 class="section-title">About Me</h2>
-        <p class="about-text">
-            I bridge the gap between technical infrastructure and actionable business insights. As a Computer Science student, I specialize in transforming raw data into strategic assets. My focus is on architecting <span>AI-powered solutions</span> and interactive visualizations that drive measurable business value.
-        </p>
-    </section>
-
     <section id="skills" class="content-section">
-        <h2 class="section-title">Technical Stack</h2>
-        <div class="skills-container">
-            <div class="skill-row">
-                <span>Python (Pandas, Scikit-Learn)</span>
-                <div class="progress-bar"><div class="progress" style="--width: 90%;"></div></div>
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-wrapper">
+
+            <div class="parent-box">
+                <div class="box-header"><i class="fab fa-python"></i> Python Ecosystem</div>
+                <div class="sub-skills">
+                    <span class="sub-box">Pandas</span>
+                    <span class="sub-box">NumPy</span>
+                    <span class="sub-box">Matplotlib</span>
+                    <span class="sub-box">Scikit-learn</span>
+                    <span class="sub-box">Streamlit</span>
+                </div>
             </div>
-            <div class="skill-row">
-                <span>SQL (CTEs, Window Functions)</span>
-                <div class="progress-bar"><div class="progress" style="--width: 85%;"></div></div>
+
+            <div class="parent-box">
+                <div class="box-header"><i class="fas fa-chart-bar"></i> Visualization</div>
+                <div class="sub-skills">
+                    <span class="sub-box">Power BI</span>
+                    <span class="sub-box">Tableau</span>
+                    <span class="sub-box">KPI Design</span>
+                    <span class="sub-box">Data Storytelling</span>
+                </div>
             </div>
-            <div class="skill-row">
-                <span>Power BI (Advanced DAX)</span>
-                <div class="progress-bar"><div class="progress" style="--width: 95%;"></div></div>
+
+            <div class="parent-box">
+                <div class="box-header"><i class="fas fa-database"></i> Databases & ETL</div>
+                <div class="sub-skills">
+                    <span class="sub-box">SQL / MySQL</span>
+                    <span class="sub-box">SQL Server</span>
+                    <span class="sub-box">Data Cleaning</span>
+                    <span class="sub-box">ETL Pipelines</span>
+                </div>
             </div>
-            <div class="skill-row">
-                <span>Generative AI (Gemini API)</span>
-                <div class="progress-bar"><div class="progress" style="--width: 80%;"></div></div>
+
+            <div class="parent-box">
+                <div class="box-header"><i class="fas fa-microscope"></i> Analytics</div>
+                <div class="sub-skills">
+                    <span class="sub-box">EDA</span>
+                    <span class="sub-box highlight">Statistical Analysis</span>
+                    <span class="sub-box">Web Scraping</span>
+                    <span class="sub-box">GenAI Integration</span>
+                </div>
             </div>
+
+            <div class="parent-box">
+                <div class="box-header"><i class="fas fa-briefcase"></i> Office & Dev</div>
+                <div class="sub-skills">
+                    <span class="sub-box">MS Excel</span>
+                    <span class="sub-box">Pivot Tables</span>
+                    <span class="sub-box">VLOOKUP</span>
+                    <span class="sub-box">Git / GitHub</span>
+                    <span class="sub-box">HTML / CSS</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <section id="projects" class="content-section">
-        <h2 class="section-title">Selected Projects</h2>
+        <h2 class="section-title">Cinematic Projects</h2>
         <div class="project-grid">
-
             <div class="project-card">
                 <div class="card-inner">
-                    <img src="images/resume-architect.jpg" alt="AI Resume">
+                    <img src="images/resume.jpg" alt="AI Resume">
                     <div class="card-content">
-                        <span class="tag">AI Engineering</span>
                         <h3>AI Resume Architect</h3>
-                        <p>Streamlined document prep by 70%. Built a Gemini-powered system for ATS-compliant documents.</p>
-                        <div class="card-links">
-                            <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                        <p>Streamlined document prep by 70% using Gemini API.</p>
+                        <div class="card-btns">
+                            <a href="#" class="btn-netflix red">View Project</a>
+                            <a href="#" class="btn-netflix grey">GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="card-inner">
-                    <img src="images/netflix.jpg" alt="Netflix">
-                    <div class="card-content">
-                        <span class="tag">Business Intelligence</span>
-                        <h3>Netflix Content Strategy</h3>
-                        <p>Identified a 20% growth opportunity in regional sectors using Power BI and DAX analysis.</p>
-                        <div class="card-links">
-                            <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="project-card">
-                <div class="card-inner">
-                    <img src="images/crypto.jpg" alt="Crypto">
-                    <div class="card-content">
-                        <span class="tag">Real-Time Data</span>
-                        <h3>Live Crypto Intelligence</h3>
-                        <p>Reduced data lag by 100%. Integrated CoinGecko API for instant market volatility tracking.</p>
-                        <div class="card-links">
-                            <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-inner">
-                    <img src="images/data_science.jpg" alt="Salaries">
-                    <div class="card-content">
-                        <span class="tag">Market Analysis</span>
-                        <h3>Global Salary Benchmarking</h3>
-                        <p>Actionable insights on remote vs. on-site trends to optimize hiring budgets in tech.</p>
-                        <div class="card-links">
-                            <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_datascience-salaries-remotework-activity-7360030787842289665-rlb9" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-inner">
-                    <img src="images/ai-assistant.jpg" alt="AI Assistant">
-                    <div class="card-content">
-                        <span class="tag">Automation</span>
-                        <h3>Multi-Tool AI Assistant</h3>
-                        <p>Automated daily workflows reducing manual admin tasks by 40% via Gemini integration.</p>
-                        <div class="card-links">
-                            <a href="https://github.com/Zaidkarim6204/zaid_ai" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://zaidai-2xxp8rawimrutykwvyny66.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-inner">
-                    <img src="images/news.jpg" alt="News">
-                    <div class="card-content">
-                        <span class="tag">Web Intelligence</span>
-                        <h3>Global News Tracker</h3>
-                        <p>Categorized live headlines via GNews API for instant monitoring of market sentiment.</p>
-                        <div class="card-links">
-                            <a href="https://github.com/Zaidkarim6204/news-dashboard" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://news-dashboard-gbfxoy46ttutjpevyrws7k.streamlit.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
     </section>
 
-    <footer id="contact">
-        <div class="social-footer">
-            <a href="https://github.com/Zaidkarim6204" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/zaid.tech31" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="mailto:karimzaid370@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+916204027036" title="Call"><i class="fas fa-phone"></i></a>
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/zaid.tech31" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="tel:+916204027036"><i class="fas fa-phone"></i></a>
         </div>
-        <p>&copy; 2026 Syed Zaid Karim | Data & AI Portfolio</p>
+        <p>&copy; 2026 Syed Zaid Karim</p>
     </footer>
 
-    <script>
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-        });
-
-        // Animations
-        ScrollReveal().reveal('.reveal', { delay: 200, distance: '50px', origin: 'bottom' });
-        ScrollReveal().reveal('.reveal-delay', { delay: 400, distance: '50px', origin: 'bottom' });
-        ScrollReveal().reveal('.reveal-delay-2', { delay: 600, distance: '50px', origin: 'bottom' });
-        
-        // Progress Bars
-        const progressBars = document.querySelectorAll('.progress');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.width = entry.target.style.getPropertyValue('--width');
-                }
-            });
-        });
-        progressBars.forEach(p => observer.observe(p));
-    </script>
 </body>
 </html>
