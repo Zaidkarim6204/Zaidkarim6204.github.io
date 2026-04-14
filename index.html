@@ -3,136 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Zaid Karim | Data Analyst Portfolio</title>
+    <title>Syed Zaid Karim | Data Analyst & AI Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Syne:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="netflix-body">
 
-    <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo">SYED ZAID <span>KARIM</span></div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-            </ul>
+    <div id="loader" class="profile-gate">
+        <h1>Who's Watching?</h1>
+        <div class="profile-container">
+            <div class="profile-card" onclick="enterSite()"><div class="avatar blue"></div><span>Recruiter</span></div>
+            <div class="profile-card" onclick="enterSite()"><div class="avatar grey"></div><span>Developer</span></div>
+            <div class="profile-card" onclick="enterSite()"><div class="avatar red"></div><span>Stalker</span></div>
         </div>
-    </nav>
+    </div>
 
-    <header class="hero">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h1 class="sharp-name">SYED ZAID <br>KARIM</h1>
-                <h3 class="role-tag">DATA ANALYST & AI DEVELOPER</h3>
-                <p class="informative-summary">
-                    Computer Science Engineering student specializing in Data Analytics and Generative AI. 
-                    Bridging the gap between complex data and actionable insights using 
-                    <span>Python, Power BI, and SQL</span>. I am deeply passionate about automating business 
-                    workflows and enhancing decision-making through predictive modeling and LLM integration. 
-                    Scheduled to graduate <strong>June 2026</strong>.
-                </p>
-                <div class="hero-btns">
-                    <a href="resume.pdf" target="_blank" class="btn btn-white"><i class="fas fa-file-pdf"></i> My Resume</a>
-                    <a href="mailto:karimzaid370@gmail.com" class="btn btn-grey"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+    <div id="main-content" class="hidden">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">SYED ZAID <span>KARIM</span></div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1 class="sharp-name">SYED ZAID <br>KARIM</h1>
+                    <h3 class="role-tag">DATA ANALYST & AI DEVELOPER</h3>
+                    
+                    <p class="informative-summary">
+                        Computer Science Engineering student specializing in Data Analytics and Generative AI. 
+                        I bridge the gap between complex datasets and actionable business strategy using 
+                        <span>Python, Power BI, and SQL</span>. I am deeply passionate about automating 
+                        repetitive business workflows and enhancing executive decision-making through 
+                        advanced predictive modeling and LLM integration. Scheduled to graduate <strong>June 2026</strong>.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="resume.pdf" target="_blank" class="btn btn-white"><i class="fas fa-file-pdf"></i> My Resume</a>
+                        <a href="#contact" class="btn btn-grey"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="content-rows">
-        
-        <section id="experience" class="row">
-            <h2 class="row-title">Professional Experience</h2>
-            <div class="experience-list">
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <h3>Data Analyst Trainee</h3>
-                        <span>Sept 2025 – Present</span>
+        <main class="content-rows">
+            <section id="experience" class="row">
+                <h2 class="row-title">Professional Experience</h2>
+                <div class="experience-list">
+                    <div class="exp-card">
+                        <div class="exp-header"><h3>Data Analyst Trainee</h3><span>Sept 2025 – Present</span></div>
+                        <p class="company">Venturing Digital</p>
+                        <p>Specializing in EV market analysis and retail data optimization. Architecting high-impact dashboards and streamlining ETL pipelines for supermarket datasets.</p>
                     </div>
-                    <p class="company">Venturing Digital</p>
-                    <p>Focusing on EV market analysis and supermarket sales data. Specialized in building high-impact dashboards and optimizing data cleaning workflows.</p>
-                </div>
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <h3>Data Analyst Intern</h3>
-                        <span>May 2025 – June 2025</span>
+                    <div class="exp-card">
+                        <div class="exp-header"><h3>Data Analyst Intern</h3><span>May 2025 – June 2025</span></div>
+                        <p class="company">Infotact Solutions</p>
+                        <p>Identified seasonal trends in historical sales data. Executed complex data cleaning and exploratory analysis (EDA) using Python and SQL Server.</p>
                     </div>
-                    <p class="company">Infotact Solutions</p>
-                    <p>Worked on historical sales datasets to identify seasonal trends. Conducted rigorous data cleaning and exploratory data analysis using Python and SQL.</p>
                 </div>
+            </section>
+
+            <section id="projects" class="row">
+                <h2 class="row-title">Featured Projects</h2>
+                <div class="project-grid">
+                    
+                    <div class="netflix-card-medium">
+                        <img src="images/resume-architect.jpg" alt="AI Resume Architect">
+                        <div class="card-overlay">
+                            <div class="star-desc">
+                                <h4>AI Resume Architect</h4>
+                                <p><strong>S:</strong> Non-standardized resumes slow down hiring.</p>
+                                <p><strong>T:</strong> Automate ATS-compliant resume creation.</p>
+                                <p><strong>A:</strong> Integrated Gemini API with Streamlit.</p>
+                                <p><strong>R:</strong> 70% reduction in manual document prep.</p>
+                            </div>
+                            <div class="overlay-btns">
+                                <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank" class="mini-btn">GitHub</a>
+                                <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank" class="mini-btn highlight">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="netflix-card-medium">
+                        <img src="images/netflix.jpg" alt="Netflix Dashboard">
+                        <div class="card-overlay">
+                            <div class="star-desc">
+                                <h4>Netflix Content Hub</h4>
+                                <p><strong>S:</strong> High competition requires data-backed content buys.</p>
+                                <p><strong>T:</strong> Analyze 8k+ titles for market gaps.</p>
+                                <p><strong>A:</strong> Built Power BI dashboard with Advanced DAX.</p>
+                                <p><strong>R:</strong> Visualized ROI potential in 3 regional markets.</p>
+                            </div>
+                            <div class="overlay-btns">
+                                <a href="https://github.com/Zaidkarim6204/Netflix-Analysis" target="_blank" class="mini-btn">GitHub</a>
+                                <a href="https://www.linkedin.com/posts/..." target="_blank" class="mini-btn highlight">Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="netflix-card-medium">
+                        <img src="images/crypto.jpg" alt="Crypto Hub">
+                        <div class="card-overlay">
+                            <div class="star-desc">
+                                <h4>Live Crypto Tracker</h4>
+                                <p><strong>S:</strong> Traders need real-time volatility alerts.</p>
+                                <p><strong>T:</strong> Create a sub-second latency price monitor.</p>
+                                <p><strong>A:</strong> Python integration with CoinGecko API.</p>
+                                <p><strong>R:</strong> Near-instant tracking for top 50 assets.</p>
+                            </div>
+                            <div class="overlay-btns">
+                                <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" target="_blank" class="mini-btn">GitHub</a>
+                                <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" target="_blank" class="mini-btn highlight">Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <section id="contact" class="contact-area">
+             <div class="contact-links-grid">
+                <div class="contact-pill red"><i class="fas fa-envelope"></i> karimzaid370@gmail.com</div>
+                <div class="contact-pill insta"><a href="https://www.instagram.com/zaid.tech31" target="_blank"><i class="fab fa-instagram"></i> @zaid.tech31</a></div>
+                <div class="contact-pill github"><a href="https://github.com/Zaidkarim6204" target="_blank"><i class="fab fa-github"></i> github.com/Zaidkarim6204</a></div>
             </div>
         </section>
+    </div>
 
-        <section id="projects" class="row">
-            <h2 class="row-title">Featured Projects</h2>
-            <div class="project-grid">
-
-                <div class="netflix-card-large">
-                    <img src="images/resume-architect.jpg" alt="AI Resume Architect">
-                    <div class="card-overlay">
-                        <div class="star-desc">
-                            <h4>AI Resume Architect</h4>
-                            <p><strong>Situation:</strong> Recruiters struggle with unstructured, non-standardized resumes.</p>
-                            <p><strong>Task:</strong> Build a tool to automate resume standardization for ATS compliance.</p>
-                            <p><strong>Action:</strong> Used Gemini API & Streamlit to architect a system that parses and reformats PDFs.</p>
-                            <p><strong>Result:</strong> Reduced manual formatting time by 70% and increased ATS match rates.</p>
-                        </div>
-                        <div class="overlay-btns">
-                            <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank" class="mini-btn">GitHub</a>
-                            <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank" class="mini-btn highlight">Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="netflix-card-large">
-                    <img src="images/netflix.jpg" alt="Netflix Insight">
-                    <div class="card-overlay">
-                        <div class="star-desc">
-                            <h4>Netflix Content Insight</h4>
-                            <p><strong>Situation:</strong> Understanding global content trends is vital for streaming ROI.</p>
-                            <p><strong>Task:</strong> Analyze 8,000+ titles to find genre saturation and regional gaps.</p>
-                            <p><strong>Action:</strong> Developed an interactive Power BI dashboard using advanced DAX measures.</p>
-                            <p><strong>Result:</strong> Identified 3 key underserved international markets for content acquisition.</p>
-                        </div>
-                        <div class="overlay-btns">
-                            <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R" target="_blank" class="mini-btn highlight">View Insights</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="netflix-card-large">
-                    <img src="images/crypto.jpg" alt="Crypto Hub">
-                    <div class="card-overlay">
-                        <div class="star-desc">
-                            <h4>Live Crypto Analytics</h4>
-                            <p><strong>Situation:</strong> High volatility in markets requires near-instant data tracking.</p>
-                            <p><strong>Task:</strong> Create a real-time monitor for top-tier cryptocurrency price movements.</p>
-                            <p><strong>Action:</strong> Leveraged CoinGecko API and Python to stream live market data.</p>
-                            <p><strong>Result:</strong> Achieved sub-second update latency for price tracking and volatility alerts.</p>
-                        </div>
-                        <div class="overlay-btns">
-                            <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" target="_blank" class="mini-btn">GitHub</a>
-                            <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" target="_blank" class="mini-btn highlight">Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer id="contact">
-        <div class="social-footer">
-            <a href="https://github.com/Zaidkarim6204" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/zaid.tech31" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+916204027036"><i class="fas fa-phone"></i></a>
-        </div>
-        <p>&copy; 2026 Syed Zaid Karim</p>
-    </footer>
-
+    <script>
+        function enterSite() {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('main-content').classList.remove('hidden');
+            }, 500);
+        }
+    </script>
 </body>
 </html>
