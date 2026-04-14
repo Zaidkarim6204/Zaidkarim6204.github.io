@@ -1,109 +1,860 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Zaid Karim | Data Analyst & AI Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Syne:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syed Zaid Karim | Data Analyst & AI Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --red: #E50914;
+      --red-dark: #b0060f;
+      --red-glow: rgba(229,9,20,0.4);
+      --black: #000000;
+      --dark: #0d0d0d;
+      --dark2: #141414;
+      --dark3: #1c1c1c;
+      --card: #1a1a1a;
+      --text: #e5e5e5;
+      --muted: #808080;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 2px; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 4rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, transparent 100%);
+      transition: background 0.3s;
+    }
+    nav.scrolled { background: rgba(0,0,0,0.97); }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--red);
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(229,9,20,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 80% at 100% 50%, rgba(229,9,20,0.08) 0%, transparent 60%),
+        linear-gradient(135deg, #000 0%, #0d0d0d 100%);
+      z-index: 0;
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(229,9,20,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(229,9,20,0.05) 1px, transparent 1px);
+      background-size: 80px 80px;
+      animation: gridMove 20s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(80px); }
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 60%),
+        linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 40%);
+      z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 700px; }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.9;
+      color: var(--white);
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero h1 span { color: var(--red); }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-desc {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: #aaa;
+      max-width: 480px;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      background: var(--red);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover {
+      background: #ff1a27;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--red-glow);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 2rem;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      backdrop-filter: blur(6px);
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .hero-social {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+    }
+    .hero-social a {
+      color: var(--muted);
+      font-size: 1.3rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .hero-social a:hover { color: var(--red); transform: translateY(-3px); }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 1s 1.5s forwards;
+    }
+    .scroll-dot {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--red), transparent);
+      animation: scrollPulse 1.5s infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    section { padding: 6rem 4rem; position: relative; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      color: var(--white);
+      letter-spacing: 2px;
+      margin-bottom: 3rem;
+      line-height: 1;
+    }
+
+    #about {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--dark2) 100%);
+      border-top: 1px solid rgba(229,9,20,0.2);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #bbb;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid rgba(229,9,20,0.2);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: var(--red);
+    }
+    .stat-card:hover { border-color: var(--red); transform: translateY(-4px); }
+
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: var(--red);
+      line-height: 1;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 1px; margin-top: 0.3rem; }
+
+    #skills { background: var(--black); }
+
+    .skills-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-box {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-box::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--red);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-6px);
+      border-color: rgba(229,9,20,0.4);
+      box-shadow: 0 12px 40px rgba(229,9,20,0.15);
+    }
+    .skill-box:hover::after { transform: scaleX(1); }
+
+    .skill-box i {
+      font-size: 1.8rem;
+      color: var(--red);
+      transition: transform 0.3s;
+    }
+    .skill-box:hover i { transform: scale(1.2); }
+
+    .skill-box span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text);
+      text-align: center;
+    }
+
+    #projects {
+      background: linear-gradient(180deg, var(--dark2) 0%, var(--black) 100%);
+      border-top: 1px solid rgba(229,9,20,0.15);
+    }
+
+    .projects-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 60px rgba(229,9,20,0.25);
+      z-index: 2;
+    }
+
+    .project-thumb {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #1a1a1a, #2a0a0a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb-icon {
+      font-size: 3.5rem;
+      color: rgba(229,9,20,0.3);
+      transition: transform 0.4s, color 0.4s;
+    }
+    .project-card:hover .project-thumb-icon {
+      transform: scale(1.2);
+      color: rgba(229,9,20,0.6);
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .project-card:hover .project-overlay { opacity: 1; }
+
+    .play-btn {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--black);
+      transform: scale(0.8);
+      transition: transform 0.3s;
+    }
+    .project-card:hover .play-btn { transform: scale(1); }
+
+    .project-badge {
+      position: absolute;
+      top: 0.8rem; left: 0.8rem;
+      background: var(--red);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+    }
+
+    .project-body { padding: 1.5rem; }
+    .project-body h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .project-body p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+    .tag-demo {
+      padding: 0.3rem 0.8rem;
+      background: var(--red);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .tag-demo:hover { background: #ff1a27; }
+
+    .tag-code {
+      padding: 0.3rem 0.8rem;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .tag-code:hover { border-color: var(--red); color: var(--red); }
+
+    #contact {
+      background: var(--dark2);
+      border-top: 1px solid rgba(229,9,20,0.2);
+      text-align: center;
+    }
+
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-inner p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-icon-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .contact-icon-link i { font-size: 2rem; }
+    .contact-icon-link:hover { color: var(--red); transform: translateY(-4px); }
+
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: var(--red);
+      letter-spacing: 3px;
+    }
+    footer p { color: var(--muted); font-size: 0.8rem; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s, transform 0.7s;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .stagger.visible > *:nth-child(1)  { opacity:1; transform:none; transition-delay:0.05s; }
+    .stagger.visible > *:nth-child(2)  { opacity:1; transform:none; transition-delay:0.1s; }
+    .stagger.visible > *:nth-child(3)  { opacity:1; transform:none; transition-delay:0.15s; }
+    .stagger.visible > *:nth-child(4)  { opacity:1; transform:none; transition-delay:0.2s; }
+    .stagger.visible > *:nth-child(5)  { opacity:1; transform:none; transition-delay:0.25s; }
+    .stagger.visible > *:nth-child(6)  { opacity:1; transform:none; transition-delay:0.3s; }
+    .stagger.visible > *:nth-child(7)  { opacity:1; transform:none; transition-delay:0.35s; }
+    .stagger.visible > *:nth-child(8)  { opacity:1; transform:none; transition-delay:0.4s; }
+    .stagger.visible > *:nth-child(9)  { opacity:1; transform:none; transition-delay:0.45s; }
+    .stagger.visible > *:nth-child(10) { opacity:1; transform:none; transition-delay:0.5s; }
+    .stagger.visible > *:nth-child(11) { opacity:1; transform:none; transition-delay:0.55s; }
+    .stagger.visible > *:nth-child(12) { opacity:1; transform:none; transition-delay:0.6s; }
+
+    .red-line { width: 60px; height: 3px; background: var(--red); margin-bottom: 1.5rem; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 0 1.5rem; }
+      .hero h1 { font-size: 4rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .skills-row { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
 </head>
-<body class="netflix-body">
+<body>
 
-    <div id="loader" class="profile-gate">
-        <h1>Who's Watching?</h1>
-        <div class="profile-container">
-            <div class="profile-card" onclick="enterSite()">
-                <div class="avatar blue"></div>
-                <span>Recruiter</span>
-            </div>
-            <div class="profile-card" onclick="enterSite()">
-                <div class="avatar grey"></div>
-                <span>Developer</span>
-            </div>
-            <div class="profile-card" onclick="enterSite()">
-                <div class="avatar red"></div>
-                <span>Stalker</span>
-            </div>
-        </div>
-    </div>
+  <nav id="navbar">
+    <a href="#" class="nav-logo">ZK</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div id="main-content" class="hidden">
-        <nav class="navbar">
-            <div class="nav-left">
-                <div class="logo">SYED ZAID <span>KARIM</span></div>
-                <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="nav-right">
-                <div class="profile-icon"></div>
-            </div>
-        </nav>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Data Analyst &amp; AI Developer</div>
+      <h1>Syed <span>Zaid</span><br>Karim</h1>
+      <div class="hero-subtitle">Computer Science Engineering · AJU '26</div>
+      <p class="hero-desc">Bridging complex data and actionable business insights using Python, Power BI, and Generative AI. Architecting intelligent solutions that matter.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary"><i class="fas fa-play"></i> View Projects</a>
+        <a href="mailto:karimzaid370@gmail.com" class="btn-secondary"><i class="fas fa-envelope"></i> Hire Me</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Zaidkarim6204" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/zaid.tech31" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
 
-        <header class="hero">
-            <div class="hero-overlay">
-                <div class="hero-content">
-                    <h1 class="sharp-name">SYED ZAID <br>KARIM</h1>
-                    <h3 class="role-tag">DATA ANALYST & AI DEVELOPER</h3>
-                    
-                    <p class="informative-summary">
-                        Computer Science Engineering student specializing in Data Analytics and Generative AI. 
-                        Bridging the gap between complex data and actionable insights using 
-                        <span>Python, Power BI, and SQL</span>. Scheduled to graduate <strong>June 2026</strong>.
-                    </p>
+  <section id="about">
+    <div class="section-label reveal">Origin Story</div>
+    <h2 class="section-title reveal">About Me</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="red-line"></div>
+        <p>A results-driven Computer Science Engineering student specializing in Data Analytics and Generative AI. I bridge the gap between complex data and actionable business insights using Python, Power BI, and SQL.</p>
+        <p>Currently focused on architecting AI-powered solutions and interactive data visualizations that turn raw numbers into compelling narratives.</p>
+        <br>
+        <a href="mailto:karimzaid370@gmail.com" class="btn-primary" style="display:inline-flex"><i class="fas fa-envelope"></i>&nbsp; karimzaid370@gmail.com</a>
+      </div>
+      <div class="about-stats stagger">
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Projects Shipped</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">12+</div>
+          <div class="stat-label">Technologies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2026</div>
+          <div class="stat-label">Graduating Year</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">AI</div>
+          <div class="stat-label">Primary Focus</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                    <div class="hero-btns">
-                        <a href="resume.pdf" target="_blank" class="btn btn-white">
-                            <i class="fas fa-file-pdf"></i> My Resume
-                        </a>
-                        <a href="#contact" class="btn btn-grey">
-                            <i class="fas fa-paper-plane"></i> Get In Touch
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </header>
+  <section id="skills">
+    <div class="section-label reveal">Arsenal</div>
+    <h2 class="section-title reveal">Technical Stack</h2>
+    <div class="skills-row stagger">
+      <div class="skill-box"><i class="fab fa-python"></i><span>Python</span></div>
+      <div class="skill-box"><i class="fas fa-database"></i><span>SQL</span></div>
+      <div class="skill-box"><i class="fas fa-chart-bar"></i><span>Power BI</span></div>
+      <div class="skill-box"><i class="fas fa-robot"></i><span>GenAI</span></div>
+      <div class="skill-box"><i class="fas fa-wind"></i><span>Streamlit</span></div>
+      <div class="skill-box"><i class="fas fa-table"></i><span>Pandas</span></div>
+      <div class="skill-box"><i class="fas fa-atom"></i><span>NumPy</span></div>
+      <div class="skill-box"><i class="fas fa-chart-line"></i><span>Matplotlib</span></div>
+      <div class="skill-box"><i class="fas fa-palette"></i><span>Seaborn</span></div>
+      <div class="skill-box"><i class="fas fa-chart-pie"></i><span>Plotly</span></div>
+      <div class="skill-box"><i class="fas fa-brain"></i><span>Scikit-learn</span></div>
+      <div class="skill-box"><i class="fas fa-file-excel"></i><span>Excel</span></div>
+    </div>
+  </section>
 
-        <main class="content-rows">
-            <section class="row" id="projects">
-                <h2 class="row-title">Featured Projects</h2>
-                <div class="row-inner">
-                    <div class="netflix-card">
-                        <img src="images/resume-architect.jpg" alt="AI Resume Architect">
-                        <div class="card-overlay">
-                            <h4>AI Resume Architect</h4>
-                            <p>GenAI • Streamlit</p>
-                            <div class="overlay-btns">
-                                <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank" class="mini-btn">Code</a>
-                                <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank" class="mini-btn highlight">Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-            </section>
-        </main>
+  <section id="projects">
+    <div class="section-label reveal">Catalogue</div>
+    <h2 class="section-title reveal">Featured Projects</h2>
+    <div class="projects-row stagger">
 
-        <section id="contact" class="contact-area">
-             <div class="contact-links-grid">
-                <div class="contact-pill red"><i class="fas fa-envelope"></i> karimzaid370@gmail.com</div>
-                <div class="contact-pill insta"><a href="https://www.instagram.com/zaid.tech31" target="_blank" style="color:inherit; text-decoration:none;"><i class="fab fa-instagram"></i> @zaid.tech31</a></div>
-                <div class="contact-pill github"><a href="https://github.com/Zaidkarim6204" target="_blank" style="color:inherit; text-decoration:none;"><i class="fab fa-github"></i> github.com/Zaidkarim6204</a></div>
-            </div>
-        </section>
-    </div>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="project-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div>
+          <div class="project-badge">Featured</div>
+        </div>
+        <div class="project-body">
+          <h3>AI Resume Architect</h3>
+          <p>A GenAI-powered document system built with the Google Gemini API and Streamlit to analyze and architect professional resumes.</p>
+          <div class="project-actions">
+            <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank" class="tag-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank" class="tag-code"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        function enterSite() {
-            document.getElementById('loader').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('main-content').classList.remove('hidden');
-            }, 500);
-        }
-    </script>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-icon"><i class="fas fa-comments"></i></div>
+          <div class="project-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="project-body">
+          <h3>Multi-Tool AI Assistant</h3>
+          <p>Advanced conversational AI powered by Google Gemini with web search, weather integration, and automated email capabilities.</p>
+          <div class="project-actions">
+            <a href="https://zaidai-2xxp8rawimrutykwvyny66.streamlit.app/" target="_blank" class="tag-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="https://github.com/Zaidkarim6204/zaid_ai" target="_blank" class="tag-code"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-icon"><i class="fas fa-tv"></i></div>
+          <div class="project-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="project-body">
+          <h3>Netflix Insight Dashboard</h3>
+          <p>Interactive Power BI dashboard analyzing global content trends using advanced DAX for custom performance metrics.</p>
+          <div class="project-actions">
+            <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_powerbi-dataanalytics-netflixdashboard-activity-7349511544537305088-kv7R" target="_blank" class="tag-demo"><i class="fas fa-external-link-alt"></i> View</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-icon"><i class="fab fa-bitcoin"></i></div>
+          <div class="project-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="project-body">
+          <h3>Live Crypto Dashboard</h3>
+          <p>Real-time financial dashboard displaying live market data and price movements via the CoinGecko API.</p>
+          <div class="project-actions">
+            <a href="https://cryptodashboardlive-eejx4koj7t5wvkyeuou5hz.streamlit.app/" target="_blank" class="tag-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="https://github.com/Zaidkarim6204/CryptoDashboardLIVE" target="_blank" class="tag-code"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-icon"><i class="fas fa-newspaper"></i></div>
+          <div class="project-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="project-body">
+          <h3>Live Global News Tracker</h3>
+          <p>Dynamic web application visualizing global headlines and categorizing news using the GNews API.</p>
+          <div class="project-actions">
+            <a href="https://news-dashboard-gbfxoy46ttutjpevyrws7k.streamlit.app/" target="_blank" class="tag-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="https://github.com/Zaidkarim6204/news-dashboard" target="_blank" class="tag-code"><i class="fab fa-github"></i> Code</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-icon"><i class="fas fa-dollar-sign"></i></div>
+          <div class="project-overlay"><div class="play-btn"><i class="fas fa-play"></i></div></div>
+        </div>
+        <div class="project-body">
+          <h3>Data Science Salary Analysis</h3>
+          <p>Comprehensive Power BI analysis of global salary trends, comparing remote, hybrid, and on-site role compensations.</p>
+          <div class="project-actions">
+            <a href="https://www.linkedin.com/posts/syed-zaid-karim-b12060249_datascience-salaries-remotework-activity-7360030787842289665-rlb9" target="_blank" class="tag-demo"><i class="fas fa-external-link-alt"></i> View</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-label reveal" style="text-align:center">Let's Connect</div>
+      <h2 class="section-title reveal" style="text-align:center">Get In Touch</h2>
+      <p class="reveal">Have a project in mind or want to collaborate? I'm always open to discussing new opportunities, data challenges, and AI ideas.</p>
+      <div class="reveal">
+        <a href="mailto:karimzaid370@gmail.com" class="btn-primary" style="display:inline-flex; margin-bottom:2rem">
+          <i class="fas fa-envelope"></i>&nbsp; Send Me an Email
+        </a>
+      </div>
+      <div class="contact-icons reveal">
+        <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" class="contact-icon-link">
+          <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+        </a>
+        <a href="https://github.com/Zaidkarim6204" target="_blank" class="contact-icon-link">
+          <i class="fab fa-github"></i><span>GitHub</span>
+        </a>
+        <a href="https://www.instagram.com/zaid.tech31" target="_blank" class="contact-icon-link">
+          <i class="fab fa-instagram"></i><span>Instagram</span>
+        </a>
+        <a href="mailto:karimzaid370@gmail.com" class="contact-icon-link">
+          <i class="fas fa-envelope"></i><span>Email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">ZK</span>
+    <p>&copy; 2026 Syed Zaid Karim. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    const reveals = document.querySelectorAll('.reveal, .stagger');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        const demo = card.querySelector('.tag-demo');
+        if (demo) demo.click();
+      });
+    });
+  </script>
 </body>
 </html>
