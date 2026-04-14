@@ -3,107 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Zaid Karim | Browse</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+    <title>Syed Zaid Karim | Data Analyst & AI Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Syne:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="netflix-body">
 
-    <nav class="browse-nav">
-        <div class="nav-left">
-            <div class="logo">SZK<span>.</span></div>
-            <ul class="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="mailto:karimzaid370@gmail.com">Contact</a></li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-bell"></i>
-            <div class="profile-icon"></div>
-        </div>
-    </nav>
-
-    <header class="billboard">
-        <div class="billboard-content">
-            <h1 class="main-title">AI RESUME ARCHITECT</h1>
-            <p class="description">
-                A GenAI-powered system built with Gemini LLM to automate the recruitment cycle. 
-                Standardizing unstructured data into ATS-compliant professional profiles with 70% efficiency.
-            </p>
-            <div class="billboard-btns">
-                <a href="https://airesumearchitect-rm2lkappnpvyprygkwq8vpc.streamlit.app/" target="_blank" class="btn play"><i class="fas fa-play"></i> Launch App</a>
-                <a href="https://github.com/Zaidkarim6204/AI-Resume-Architect" target="_blank" class="btn info"><i class="fas fa-info-circle"></i> More Info</a>
+    <div id="loader" class="profile-gate">
+        <h1>Who's Watching?</h1>
+        <div class="profile-container">
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar blue"></div>
+                <span>Recruiter</span>
+            </div>
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar grey"></div>
+                <span>Developer</span>
+            </div>
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar red"></div>
+                <span>Stalker</span>
+            </div>
+            <div class="profile-card" onclick="enterSite()">
+                <div class="avatar orange"></div>
+                <span>Adventurer</span>
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="rows-container">
-        
-        <section class="row" id="projects">
-            <h2 class="row-header">Data Analytics & Visualization</h2>
-            <div class="row-inner">
-                
-                <div class="netflix-card">
-                    <img src="images/netflix.jpg" alt="Netflix Dashboard">
-                    <div class="card-overlay">
-                        <h4>Netflix Insights</h4>
-                        <p>Power BI • Business Intelligence</p>
-                        <div class="card-actions">
-                            <i class="fas fa-play-circle"></i>
-                            <i class="fas fa-plus-circle"></i>
+    <div id="main-content" class="hidden">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">ZAID <span>KARIM</span></div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <i class="fas fa-search"></i>
+                <div class="profile-icon"></div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Syed Zaid Karim</h1>
+                    <h3 style="color: #46d369; margin-bottom: 10px;">98% Match for your team</h3>
+                    <p>Computer Science Engineering student specializing in Data Analytics and Generative AI. Bridging the gap between complex data and actionable insights using Python, Power BI, and SQL. Scheduled to graduate February 2026.</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn btn-white"><i class="fas fa-play"></i> Resume</a>
+                        <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" class="btn btn-grey"><i class="fas fa-info-circle"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-rows">
+            <section class="row" id="projects">
+                <h2 class="row-title">Today's Top Picks for Recruiter</h2>
+                <div class="row-inner">
+                    <div class="netflix-card">
+                        <img src="images/resume-architect.jpg" alt="AI Resume Architect">
+                        <div class="card-overlay">
+                            <h4>AI Resume Architect</h4>
+                            <p>GenAI • Streamlit • Python</p>
+                        </div>
+                    </div>
+                    <div class="netflix-card">
+                        <img src="images/netflix.jpg" alt="Netflix Dashboard">
+                        <div class="card-overlay">
+                            <h4>Netflix Insight Hub</h4>
+                            <p>Power BI • Business Intelligence</p>
+                        </div>
+                    </div>
+                    <div class="netflix-card">
+                        <img src="images/crypto.jpg" alt="Crypto Hub">
+                        <div class="card-overlay">
+                            <h4>Live Crypto Analytics</h4>
+                            <p>API • Python • Real-time</p>
+                        </div>
+                    </div>
+                    <div class="netflix-card">
+                        <img src="images/data_science.jpg" alt="Salary Analysis">
+                        <div class="card-overlay">
+                            <h4>Salary Benchmarking</h4>
+                            <p>Market Analysis • SQL</p>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <div class="netflix-card">
-                    <img src="images/crypto.jpg" alt="Crypto Tracker">
-                    <div class="card-overlay">
-                        <h4>Crypto Intelligence</h4>
-                        <p>Python • Real-time Data</p>
+            <section id="skills" class="row">
+                <h2 class="row-title">Continue Watching: Technical Arsenal</h2>
+                <div class="skills-grid">
+                    
+                    <div class="skill-category">
+                        <div class="category-header"><i class="fas fa-chart-pie"></i> BI & Visualization</div>
+                        <div class="tags-container">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">KPI Design</span>
+                            <span class="tag">Data Storytelling</span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="netflix-card">
-                    <img src="images/data_science.jpg" alt="Salary Analysis">
-                    <div class="card-overlay">
-                        <h4>Salary Benchmarking</h4>
-                        <p>Market Analysis • SQL</p>
+                    <div class="skill-category">
+                        <div class="category-header"><i class="fas fa-code"></i> Programming & AI</div>
+                        <div class="tags-container">
+                            <span class="tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tag highlight"><i class="fas fa-robot"></i> Gen AI</span>
+                            <span class="tag highlight"><i class="fas fa-wind"></i> Streamlit</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">NumPy</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Matplotlib</span>
+                        </div>
                     </div>
-                </div>
 
-                </div>
-        </section>
+                    <div class="skill-category">
+                        <div class="category-header"><i class="fas fa-database"></i> Databases</div>
+                        <div class="tags-container">
+                            <span class="tag">SQL</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">ETL Pipelines</span>
+                        </div>
+                    </div>
 
-        <section class="row" id="skills">
-            <h2 class="row-header">Technical Stack</h2>
-            <div class="row-inner">
-                <div class="skill-category">
-                    <div class="parent-box">
-                        <div class="box-header">Python & ML</div>
-                        <div class="sub-skills">
-                            <span class="sub-box">Pandas</span>
-                            <span class="sub-box">NumPy</span>
-                            <span class="sub-box">Scikit-learn</span>
+                    <div class="skill-category">
+                        <div class="category-header"><i class="fas fa-microscope"></i> Analytics</div>
+                        <div class="tags-container">
+                            <span class="tag">EDA</span>
+                            <span class="tag">Statistical Analysis</span>
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">CRM Systems</span>
                         </div>
                     </div>
                 </div>
+            </section>
+        </main>
+
+        <section id="contact" class="contact-area">
+            <div class="contact-card">
+                <div class="profile-header">
+                    <div class="p-avatar"></div>
+                    <div class="p-info">
+                        <h3>Syed Zaid Karim</h3>
+                        <p>Computer Science Engineering student</p>
+                    </div>
                 </div>
-        </section>
+                <p class="p-bio">Scheduled to graduate in Feb 2026. Specialized in Data Science & AI. Based in Jamshedpur.</p>
+                <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249" target="_blank" class="linkedin-btn"><i class="fab fa-linkedin"></i> View Profile</a>
+            </div>
 
-    </main>
+            <div class="contact-links-grid">
+                <p>I'm always up for a chat or a coffee! Feel free to reach out.</p>
+                <div class="contact-pill red"><i class="fas fa-envelope"></i> karimzaid370@gmail.com</div>
+                <div class="contact-pill grey"><i class="fas fa-phone"></i> +91 6204XXXXXX</div>
+                <a href="https://www.instagram.com/zaid.tech31" target="_blank" class="contact-pill insta"><i class="fab fa-instagram"></i> @zaid.tech31</a>
+                <a href="https://github.com/Zaidkarim6204" target="_blank" class="contact-pill github"><i class="fab fa-github"></i> Zaidkarim6204</a>
+            </div>
+            
+            <p class="coffee-text">Or catch up over a coffee ☕</p>
+        </main>
 
-    <footer class="browse-footer">
-        <div class="footer-socials">
-            <a href="https://www.linkedin.com/in/syed-zaid-karim-b12060249"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/zaid.tech31"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/Zaidkarim6204"><i class="fab fa-github"></i></a>
-        </div>
-        <p class="copyright">&copy; 2026 Syed Zaid Karim. No Rights Reserved. Just Passion.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2026 Syed Zaid Karim. All Rights Reserved.</p>
+        </footer>
+    </div>
 
+    <script>
+        function enterSite() {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('main-content').classList.remove('hidden');
+                document.getElementById('main-content').classList.add('fade-in');
+            }, 500);
+        }
+    </script>
 </body>
 </html>
